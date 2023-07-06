@@ -1,18 +1,18 @@
 function initMap() {
-    let map=new google.maps.Map(document.getElementById("map"), {
-      mapId: "17dba89734a03882",
-      center: { lat: 28.749692162101724, lng: 77.11750609196983 },
-      zoom: 17,
-      mapTypeControl:false,
-      fullscreenControl:false,
-      streetViewControl:false,
-    });
-
-    //Name
-    //Latitude,Longitude
-    //Image URL
-    //scaledSize width,height
-
+  let map=new google.maps.Map(document.getElementById("map"), {
+    mapId: "17dba89734a03882",
+    center: { lat: 28.749692162101724, lng: 77.11750609196983 },
+    zoom: 17,
+    mapTypeControl:false,
+    fullscreenControl:false,
+    streetViewControl:false,
+  });
+    
+    // Name
+  // Latitude,Longitude
+  // Image URL
+  // scaledSize width,height
+  
     const markers=[
         ["Mic Mac",28.751267703001172,77.11652440356556,'/svg/mic-mac.svg',38,31],
         ["Running Track",28.75300342406418, 77.11555305208472,"/svg/running-track.svg",38,31],
@@ -35,26 +35,26 @@ function initMap() {
         ["SPS 13",28.750709121759673, 77.11592947595577,"/svg/classroom.svg",38,31],
         ["SPS 14",28.750633814873986, 77.11539848215695,"/svg/classroom.svg",38,31],
         ["Library",28.750626968790773, 77.11660883566896,"/svg/library.svg",38,31],
-        ["TnP",28.75031327713067, 77.11713555539731,"/svg/tnp.svg",38,31],
+        ["Traing and Placement",28.75031327713067, 77.11713555539731,"/svg/tnp.svg",38,31],
         ["Auditorium",28.750312048478097, 77.11630429510787,"/svg/auditorium.svg",38,31],
         ["Computer Eng",28.749107984096312, 77.11728823360573,"/svg/computer.svg",38,31],
         ["Information Technology",28.748898481523472, 77.11807201473204,"/svg/computer.svg",38,31],
         ["Electrical and Computer Eng",28.74883982072777, 77.11764189094322,"/svg/electrical.svg",38,31],
         ["Electrical Eng",28.748873341186513, 77.11686766812333,"/svg/electrical.svg",38,31],
-        ["Civil Eng",28.74919863301842, 77.11795094692611,"/svg/civil-eng.svg",38],
-        ["BioTechnology",28.74983704977386, 77.11850213852085,"/svg/biotech.svg",38],
-        ["Mechanical Eng",28.749954370212077, 77.11890358739043,"/svg/me.svg",38],
-        ["Applied Chemical Dept",28.75135382527689, 77.11802422319995,"/svg/ac.svg",38],
-        ["Applied Physics Dept",28.751102427545298, 77.11771835739457,"/svg/ap.svg",38],
-        ["Applied Maths Dept",28.75084264925351, 77.11743160820201,"/svg/am.svg",38],
-        ["Wind Tunnel Lab",28.75276164138976, 77.11797643166786,"/svg/wind-tunnel-lab.svg",38],
-        ["Admin Block",28.750080070535372, 77.1161699117548,"/svg/admin-block.svg",38],
-        ["Amul",28.74948508765539, 77.11842567207576,"/svg/amul.svg",38],
-        ["Canteen",28.749325866313274, 77.1187602128004,"/svg/canteen.svg",38],
-        ["OAT",28.749837049760856, 77.11769924078797,"/svg/oat.svg",38],
-        ["Mini OAT",28.74996275022534, 77.11669561861406,"/svg/minioat.svg",38],
-        ["Main Gate",28.745167040271337, 77.11697279233329,"/svg/entry-gate.svg",38],
-        ["Entry Gate-2",28.745013169087823, 77.11780348372514,"/svg/entry-gate.svg",38],
+        ["Civil Eng",28.74919863301842, 77.11795094692611,"/svg/civil-eng.svg",38,31],
+        ["BioTechnology",28.74983704977386, 77.11850213852085,"/svg/biotech.svg",38,31],
+        ["Mechanical Eng",28.749954370212077, 77.11890358739043,"/svg/me.svg",38,31],
+        ["Applied Chemical Dept",28.75135382527689, 77.11802422319995,"/svg/ac.svg",38,31],
+        ["Applied Physics Dept",28.751102427545298, 77.11771835739457,"/svg/ap.svg",38,31],
+        ["Applied Maths Dept",28.75084264925351, 77.11743160820201,"/svg/am.svg",38,31],
+        ["Wind Tunnel Lab",28.75276164138976, 77.11797643166786,"/svg/wind-tunnel-lab.svg",38,31],
+        ["Admin Block",28.750080070535372, 77.1161699117548,"/svg/admin-block.svg",38,31],
+        ["Amul",28.74948508765539, 77.11842567207576,"/svg/amul.svg",38,31],
+        ["Canteen",28.749325866313274, 77.1187602128004,"/svg/canteen.svg",38,31],
+        ["OAT",28.749837049760856, 77.11769924078797,"/svg/oat.svg",38,31],
+        ["Mini OAT",28.74996275022534, 77.11669561861406,"/svg/minioat.svg",38,31],
+        ["Main Gate",28.745167040271337, 77.11697279233329,"/svg/entry-gate.svg",38,31],
+        ["Entry Gate-2",28.745013169087823, 77.11780348372514,"/svg/entry-gate.svg",38,31],
         ["Delhi School of Management",28.746890382040913, 77.1170195918483,"/svg/dsm.svg",38,31],
         ["International Affairs",28.748603437669278, 77.11985096251014,"/svg/international-affairs.svg",38,31],
         ["ATM",28.747464823004467, 77.11956431548056,"/svg/atm.svg",38,31],
@@ -95,8 +95,6 @@ function initMap() {
             infowindow.open(map,marker);
             });
     }
-    
+
   }
   
-//   window.initMap = initMap;
-  //28.749692162101724, 77.11750609196983
