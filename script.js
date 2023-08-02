@@ -1,5 +1,10 @@
 x=navigator.geolocation;
-x.getCurrentPosition(showPosition,showError);
+const options = {
+  enableHighAccuracy: true,  // Request high accuracy from the device
+  timeout: 10000,            // Set a timeout of 10 seconds
+  maximumAge: 0              // Don't use a cached location
+};
+x.getCurrentPosition(showPosition,showError,options);
 function showPosition(position)
 {
   var mylat=position.coords.latitude;
