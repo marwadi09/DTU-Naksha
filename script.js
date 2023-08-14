@@ -105,6 +105,30 @@ for(let i=0;i<markers.length;i++)
         infowindow.open(map,marker);
         });
 }
-
+google.maps.event.addListener(map, 'zoom_changed', function() {
+  var zoom = map.getZoom();
+  // iterate over markers and call setVisible
+  for (i = 0; i < markers.length; i++) {
+      markers[i].setVisible(zoom <= 15);
+  }
+});
 }
-function showError(){};
+function showError(error){
+  console.log("error");
+  let errorMessage="This is a static view of the college. "
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      errorMessage+="You have denied the request for Geolocation.";
+      break;
+    case error.POSITION_UNAVAILABLE:
+      errorMessage+="Location information is unavailable.";
+      break;
+    case error.TIMEOUT:
+      errorMessage+="The request to get user location timed out.";
+      break;
+    case error.UNKNOWN_ERROR:
+      errorMessage+="This is a static view of the college. An unknown error occurred.";
+      break;
+    }
+  document.getElementById("errorOutput").innerHTML =errorMessage;
+};

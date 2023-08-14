@@ -29,3 +29,6 @@ h1{
 .gm-style-iw{
     color: black;
 }
+#errorOutput{
+    text-align: center;
+}
