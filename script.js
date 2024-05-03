@@ -12,8 +12,8 @@ function showPosition(position)
   var coords=new google.maps.LatLng(mylat,mylong);
   let map=new google.maps.Map(document.getElementById("map"), {
     mapId: "17dba89734a03882",
-    center: { lat: 28.749692162101724, lng: 77.11750609196983 },
-    zoom: 17,
+    center: { lat: 28.74969216210101, lng: 77.11750609196983 },
+    zoom: 17.1,
     mapTypeControl:false,
     fullscreenControl:false,
     streetViewControl:false,
@@ -45,7 +45,7 @@ function showPosition(position)
     ["SPS 13",28.750709121759673, 77.11592947595577,"/svg/classroom.svg",38,31],
     ["SPS 14",28.750633814873986, 77.11539848215695,"/svg/classroom.svg",38,31],
     ["Library",28.750626968790773, 77.11660883566896,"/svg/library.svg",38,31],
-    ["Traing and Placement",28.75031327713067, 77.11713555539731,"/svg/tnp.svg",38,31],
+    ["Training and Placement",28.75031327713067, 77.11713555539731,"/svg/tnp.svg",38,31],
     ["Auditorium",28.750312048478097, 77.11630429510787,"/svg/auditorium.svg",38,31],
     ["Computer Eng",28.749107984096312, 77.11728823360573,"/svg/computer.svg",38,31],
     ["Information Technology",28.748898481523472, 77.11807201473204,"/svg/computer.svg",38,31],
@@ -98,23 +98,23 @@ for(let i=0;i<markers.length;i++)
       });
     
     const infowindow= new google.maps.InfoWindow({
-        content:currentMarker[0],
+        content:`<div><h3>${currentMarker[0]}</h3><img src="${currentMarker[3]}" alt="Your Image" style="max-width: 50px; max-height: 50px;"></div></div>`,
         });
       
     marker.addListener("click",()=>{
         infowindow.open(map,marker);
         });
 }
-google.maps.event.addListener(map, 'zoom_changed', function() {
-  var zoom = map.getZoom();
-  // iterate over markers and call setVisible
-  for (i = 0; i < markers.length; i++) {
-      markers[i].setVisible(zoom <= 15);
-  }
-});
 }
+
 function showError(error){
-  console.log("error");
+  var imageContainer=document.getElementById("errorImage");
+  imageContainer.style.backgroundImage= "url('/svg/snazzy-image-uncrop.jpg')";
+  imageContainer.style.height="80vh";
+  imageContainer.style.backgroundSize="contain";
+  imageContainer.style.backgroundRepeat="no-repeat";
+  imageContainer.style.backgroundPosition="center";
+  document.getElementById("map").style.display="none";
   let errorMessage="This is a static view of the college. "
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -130,5 +130,5 @@ function showError(error){
       errorMessage+="This is a static view of the college. An unknown error occurred.";
       break;
     }
-  document.getElementById("errorOutput").innerHTML =errorMessage;
+  document.getElementById("errorText").innerHTML =errorMessage;
 };

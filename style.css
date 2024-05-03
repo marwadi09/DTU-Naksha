@@ -19,11 +19,11 @@ h1{
     font-family: 'EB Garamond', serif;
     text-transform: uppercase;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 #map{
-    height:78vh;
+    height:88vh;
 }
 
 .gm-style-iw{
